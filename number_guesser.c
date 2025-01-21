@@ -1,23 +1,21 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-
-#define True 1;
-#define False 0;
+#include <stdbool.h>
 
 int main(){
 	char name[20];
 	int guess;
 	int correct;
 	int turnTracker;
-	int keepGoing = True;
+	bool keepGoing = true;
 
 	printf("Please enter your name:");
 	scanf("%s", name);
 	printf("Hello %s! Let's play a game!\n", name);
 
 	srand(time(NULL));
-	correct = rand() %100;
+	correct = (rand() %100) + 1;
 
 	turnTracker = 0;
 
@@ -33,7 +31,7 @@ int main(){
 		}
 		else{
 			printf("Correct!\n");
-			keepGoing = False;
+			keepGoing = false;
 		}
 	}
 
